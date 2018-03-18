@@ -1,0 +1,79 @@
+{% extends "main.html" %}
+{% block content %}
+
+
+<!-- Main page for users that are not logged in -->
+
+      <!-- Header with logo, name and title -->
+      <header class="row hr-rule">
+        <div class="col-xs-4 col-sm-4 col-md-6 margin_top" >
+					<h1>Item Catalog</h1>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-6 text-right text-uppercase margin_top">
+          <a href="{{url_for('showLogin')}}">Click Here to Log in </a>
+        </div>
+      </header>
+
+      <section class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+          <div class = 'flash'>
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <ul>
+                  {% for message in messages %}
+                  <li> <strong> {{ message }} </strong> </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+          </div>
+        </div>
+        <div class="col-md-1"></div>
+      </section>
+
+      <!-- Section for Featured Work -->
+      <section class="row">
+        <div class="col-md-4">
+          <h2><small>Categories</small></h2>
+        </div>
+
+	      <div class="col-md-8">
+	        <h2><small>Latest Items</small></h2>
+	      </div>
+      </section>
+
+      <!-- Main Section to display categories and top 10 items -->
+      <section class="row">
+
+
+        <!-- List of Categories -->
+        <div class="col-xs-12 col-sm-4 col-md-4">
+        {% for category in categories %}
+          <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              <h3>{{category.name}}</h3>
+            </div>
+            <div class="col-md-1"></div>
+          </div>
+      	{% endfor %}
+      </div>
+
+
+        <!-- Latest Added Items -->
+				<div class="col-xs-12 col-sm-8 col-md-8">
+          {% for item in items %}
+            <div class="row">
+              <div class="col-md-11">
+                <h4>{{item.title}} ({{item.category.name}})</h4>
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+          {% endfor %}
+				</div>
+
+
+      </section>
+
+{% endblock %}

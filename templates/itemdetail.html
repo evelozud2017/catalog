@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<!-- Page to display the description.  It will provide link to edit/delete an item if user owns the item -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2><small>{{item.title}}</small></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="5" name="description" readonly>{{item.description}}</textarea>
+      </div>
+    </div>
+  </div>
+
+  {% if user_id == item.user_id %}
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-10">
+          <a href="{{url_for('editItem', category_id = item.cat_id, item_id = item.id)}}" class="btn-link btn-lg">Edit</a>
+          <a href="{{url_for('deleteItem', category_id = item.cat_id, item_id = item.id)}}" class="btn-link btn-lg">Delete</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-sm-10">
+        <a href="{{url_for('showItemsByCategory', category_id = item.cat_id)}}" class="btn btn-default">Back</a>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

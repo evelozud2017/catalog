@@ -1,0 +1,50 @@
+{
+  "categories": [
+    {
+      "name": "Blues",
+      "items": [
+        {
+          "title": "B.B. King",
+          "description": "Highly influential guitarist with a precise yet effortless sounding soft-fingered style, as well as the longest career in blues."
+        },
+        { "title": "Etta James",
+          "description": "Californian blues belter whose exquisite recordings have wafted into jazz and soul from the 1950s into the 21st Century."
+        }
+      ]
+    },
+    {
+      "name": "Classical",
+      "items": [
+        {
+          "title": "Ludwig van Beethoven",
+          "description": "Among the greatest of composers, Beethoven took the style and forms of the Classical era to their utmost as a vehicle for personal expression."
+        },
+        { "title": "Wolfgang Amadeus Mozart",
+          "description": "Austrian musician Wolfgang Amadeus Mozart (1756-1791) was among the most prolific, versatile, and popular composers of all time."
+        }
+      ]
+    },
+    {
+      "name": "Country",
+      "items": [
+        {
+          "title": "Dolly Parton",
+          "description": "Larger-than-life singer/songwriter who gained international fame and whose folksy presence looms over modern country music."
+        },
+        {
+          "title": "Willie Nelson",
+          "description": "Pioneer of the anti-establishment outlaw image, who wrote hundreds of songs and became a spectacular country showman."
+        }
+      ]
+    },
+    { "name": "Electronic" },
+    { "name": "Folk" },
+    { "name": "Jazz" },
+    { "name": "New Age" },
+    { "name": "Pop/Rock" },
+    { "name": "R&B" },
+    { "name": "Rap" },
+    { "name": "Reggae" }
+
+  ]
+}

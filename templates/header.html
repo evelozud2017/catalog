@@ -1,0 +1,14 @@
+
+      <!-- Header with logo, name and title -->
+      <header class="row hr-rule">
+        <div class="col-xs-4 col-sm-4 col-md-6 margin_top" >
+					<h1>Item Catalog</h1>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-6 text-right text-uppercase margin_top">
+          {%if 'username' not in session %}
+            <a href="{{url_for('login')}}"><h5>Login</h5></a>
+          {% else %}
+            <a href="{{url_for('logout')}}"><h5>Logout</h5></a>
+          {% endif %}
+        </div>
+      </header>

@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+<!-- Form to delete an item -->
+
+  <div class="row">
+    <div class="col-md-12">
+      <h2><small>Delete Item</small></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <form class="form-horizontal" action="#" method="post">
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <h5>Are you sure you want to delete {{item.title}}?</h5>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-7">
+            <button type="submit" class="btn btn-default">Delete</button>
+            <a href="{{url_for('showItemsByCategory', category_id = item.cat_id)}}" class="btn btn-default">Back</a>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+
+
+{% endblock %}
